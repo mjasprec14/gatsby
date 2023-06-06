@@ -1,28 +1,10 @@
 import * as React from 'react';
-import { Link } from 'gatsby';
-import {
-  NavigationMenu,
-  NavigationMenuLink,
-  navigationMenuTriggerStyle,
-} from '../components/ui/navigation-menu';
+import { Layout } from '../components';
 
 export default function Home() {
   return (
-    <div>
-      <NavigationMenu>
-        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-          <Link to="/">Home</Link>
-        </NavigationMenuLink>
-        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-          <Link to="/about">About</Link>
-        </NavigationMenuLink>
-        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-          <Link to="/contact">Contact</Link>
-        </NavigationMenuLink>
-      </NavigationMenu>
-
-      <h1 className="text-red-500">Hello awesome people!!</h1>
-      <Link to="/about">About</Link>
-    </div>
+    <Layout>
+      <h1>Hello from Gatsby</h1>
+    </Layout>
   );
 }
