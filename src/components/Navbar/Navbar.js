@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'gatsby';
 import { NavigationMenu, NavigationMenuLink } from '../ui/navigation-menu';
 import { Button } from '../ui/button';
@@ -7,6 +7,7 @@ import { RxTextAlignJustify } from 'react-icons/rx';
 import logo from '../../assets/images/recipes/logo.svg';
 
 const Navbar = () => {
+  const [show, setShow] = useState(false);
   return (
     <NavigationMenu className="navbar">
       <div className="nav-center">
@@ -23,11 +24,12 @@ const Navbar = () => {
           <Button
             variant={'outline'}
             className="nav-btn"
+            onClick={() => setShow((prev) => !prev)}
           >
             <RxTextAlignJustify size={25} />
           </Button>
         </div>
-        <div className="nav-links show-links">
+        <div className={show ? 'nav-links show-links' : 'nav-links'}>
           <NavigationMenuLink>
             <Link
               className="nav-link"
@@ -37,33 +39,7 @@ const Navbar = () => {
               Home
             </Link>
           </NavigationMenuLink>
-          <NavigationMenuLink>
-            <Link
-              className="nav-link"
-              activeClassName="active-link"
-              to="/about"
-            >
-              About
-            </Link>
-          </NavigationMenuLink>
-          <NavigationMenuLink>
-            <Link
-              className="nav-link"
-              activeClassName="active-link"
-              to="/contact"
-            >
-              Contact
-            </Link>
-          </NavigationMenuLink>
-          <NavigationMenuLink>
-            <Link
-              className="nav-link"
-              activeClassName="active-link"
-              to="/tags"
-            >
-              Tags
-            </Link>
-          </NavigationMenuLink>
+
           <NavigationMenuLink>
             <Link
               className="nav-link"
@@ -73,10 +49,30 @@ const Navbar = () => {
               Recipes
             </Link>
           </NavigationMenuLink>
+
+          <NavigationMenuLink>
+            <Link
+              className="nav-link"
+              activeClassName="active-link"
+              to="/tags"
+            >
+              Tags
+            </Link>
+          </NavigationMenuLink>
+
+          <NavigationMenuLink>
+            <Link
+              className="nav-link"
+              activeClassName="active-link"
+              to="/about"
+            >
+              About
+            </Link>
+          </NavigationMenuLink>
+
           <NavigationMenuLink className="nav-link contact-link">
             <Link
               className="btn"
-              activeClassName="active-link"
               to="/recipes"
             >
               Contact
