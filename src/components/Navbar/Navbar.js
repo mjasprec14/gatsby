@@ -4,7 +4,7 @@ import { NavigationMenu, NavigationMenuLink } from '../ui/navigation-menu';
 import { Button } from '../ui/button';
 
 import { RxTextAlignJustify } from 'react-icons/rx';
-import logo from '../../assets/images/recipes/logo.svg';
+import logo from '../../assets/images/logo.svg';
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
