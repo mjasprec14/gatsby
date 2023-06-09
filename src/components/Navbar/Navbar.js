@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'gatsby';
-import { NavigationMenu, NavigationMenuLink } from '../ui/navigation-menu';
+import { NavigationMenu, NavigationMenuItem } from '../ui/navigation-menu';
 import { Button } from '../ui/button';
 
 import { RxTextAlignJustify } from 'react-icons/rx';
@@ -12,14 +12,14 @@ const Navbar = () => {
     <NavigationMenu className="navbar">
       <div className="nav-center">
         <div className="nav-header">
-          <NavigationMenuLink>
+          <NavigationMenuItem className="list-none">
             <Link to="/">
               <img
                 src={logo}
                 alt="logo"
               />
             </Link>
-          </NavigationMenuLink>
+          </NavigationMenuItem>
 
           <Button
             variant={'outline'}
@@ -30,7 +30,7 @@ const Navbar = () => {
           </Button>
         </div>
         <div className={show ? 'nav-links show-links' : 'nav-links'}>
-          <NavigationMenuLink>
+          <NavigationMenuItem className="list-none">
             <Link
               className="nav-link"
               activeClassName="active-link"
@@ -38,9 +38,9 @@ const Navbar = () => {
             >
               Home
             </Link>
-          </NavigationMenuLink>
+          </NavigationMenuItem>
 
-          <NavigationMenuLink>
+          <NavigationMenuItem className="list-none">
             <Link
               className="nav-link"
               activeClassName="active-link"
@@ -48,9 +48,9 @@ const Navbar = () => {
             >
               Recipes
             </Link>
-          </NavigationMenuLink>
+          </NavigationMenuItem>
 
-          <NavigationMenuLink>
+          <NavigationMenuItem className="list-none">
             <Link
               className="nav-link"
               activeClassName="active-link"
@@ -58,9 +58,9 @@ const Navbar = () => {
             >
               Tags
             </Link>
-          </NavigationMenuLink>
+          </NavigationMenuItem>
 
-          <NavigationMenuLink>
+          <NavigationMenuItem className="list-none">
             <Link
               className="nav-link"
               activeClassName="active-link"
@@ -68,16 +68,16 @@ const Navbar = () => {
             >
               About
             </Link>
-          </NavigationMenuLink>
+          </NavigationMenuItem>
 
-          <NavigationMenuLink className="nav-link contact-link">
+          <NavigationMenuItem className="nav-link contact-link">
             <Link
               className="btn"
               to="/recipes"
             >
               Contact
             </Link>
-          </NavigationMenuLink>
+          </NavigationMenuItem>
         </div>
       </div>
     </NavigationMenu>
