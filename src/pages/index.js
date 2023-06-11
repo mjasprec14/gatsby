@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Layout } from '../components';
 import { StaticImage } from 'gatsby-plugin-image';
-import GetSiteMetadata from '../util/fetchData';
+import { AllRecipes } from 'components';
 
 export default function Home() {
   return (
@@ -23,9 +23,9 @@ export default function Home() {
             </div>
           </div>
         </header>
-
-        <GetSiteMetadata />
       </main>
+
+      <AllRecipes />
     </Layout>
   );
 }
