@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Layout } from '../components';
 import { StaticImage } from 'gatsby-plugin-image';
+import GetSiteMetadata from '../util/fetchData';
 
 export default function Home() {
   return (
@@ -11,7 +12,7 @@ export default function Home() {
             src="../assets/images/main.jpeg"
             alt="home page banner"
             className="h-full rounded-sm"
-            placeholder="tracedSVG"
+            placeholder="DOMINANT_COLOR"
             layout="fullWidth"
           />
 
@@ -22,6 +23,8 @@ export default function Home() {
             </div>
           </div>
         </header>
+
+        <GetSiteMetadata />
       </main>
     </Layout>
   );
