@@ -73,7 +73,7 @@ const Navbar = () => {
           <NavigationMenuItem className="nav-link contact-link">
             <Link
               className="btn"
-              to="/recipes"
+              to="/contact"
             >
               Contact
             </Link>
