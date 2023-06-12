@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 
 export default function RecipesList({ recipes = [] }) {
   return (
-    <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-8 gap-x-4 pb-12">
+    <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-4 pb-12">
       {recipes?.map(({ id, title, image, prepTime, cookTime }) => {
         const pathToImage = getImage(image);
         return (
