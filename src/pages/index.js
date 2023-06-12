@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { Layout } from '../components';
 import { StaticImage } from 'gatsby-plugin-image';
-import { AllRecipes } from 'components';
+import { Layout, AllRecipes } from 'components';
 
 export default function Home() {
   return (
