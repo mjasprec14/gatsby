@@ -13,6 +13,7 @@ export default function TagList({ recipes }) {
         {newTags.map((tag) => {
           return (
             <Link
+              key={tag[0]}
               to={`/${tag[0]}`}
               className="block capitalize text-gray-500 hover:text-blue-600"
             >
