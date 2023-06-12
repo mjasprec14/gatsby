@@ -1,7 +1,7 @@
 const setupTags = (recipes) => {
   const allTags = {};
 
-  recipes.forEach((recipe) => {
+  recipes?.forEach((recipe) => {
     recipe.content.tags.forEach((tag) => {
       if (allTags.hasOwnProperty(tag)) {
         allTags[tag] = allTags[tag] + 1;
