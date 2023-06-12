@@ -1,9 +1,33 @@
 import React from 'react';
-import { Layout } from '../components';
+import { Layout, RecipesList } from 'components';
 import { StaticImage } from 'gatsby-plugin-image';
-import { Link } from 'gatsby';
+import { Link, graphql, useStaticQuery } from 'gatsby';
+
+export const query = graphql`
+  {
+    allContentfulRecipe(
+      sort: { title: ASC }
+      filter: { featured: { eq: true } }
+    ) {
+      nodes {
+        id
+        title
+        cookTime
+        prepTime
+        image {
+          gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+    }
+  }
+`;
 
 export default function About() {
+  const {
+    allContentfulRecipe: { nodes: recipes },
+  } = useStaticQuery(query);
+
+  console.log(recipes);
   return (
     <Layout>
       <main className="max-w-5xl mx-auto">
@@ -39,6 +63,13 @@ export default function About() {
             className="rounded-md max-h-[550px] object-center"
             placeholder="blurred"
           />
+        </section>
+
+        <section className="max-w-100 text-center">
+          <article className="py-4 px-8">
+            <h5>Look at this Awesomesauce!</h5>
+            <RecipesList recipes={recipes} />
+          </article>
         </section>
       </main>
     </Layout>
