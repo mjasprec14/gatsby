@@ -1,7 +1,31 @@
 import React from 'react';
-import { Layout } from '../components';
+import { Layout, RecipesList } from 'components';
+import { graphql } from 'gatsby';
 
-export default function Contact() {
+export const query = graphql`
+  {
+    allContentfulRecipe(
+      sort: { title: ASC }
+      filter: { featured: { eq: true } }
+    ) {
+      nodes {
+        id
+        title
+        cookTime
+        prepTime
+        image {
+          gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED)
+        }
+      }
+    }
+  }
+`;
+
+export default function Contact({
+  data: {
+    allContentfulRecipe: { nodes: recipes },
+  },
+}) {
   return (
     <Layout>
       <main className="page">
@@ -54,6 +78,13 @@ export default function Contact() {
                 Submit
               </button>
             </form>
+          </article>
+        </section>
+
+        <section className="max-w-100 text-center">
+          <article className="py-4 px-8">
+            <h5>Look at this Awesomesauce!</h5>
+            <RecipesList recipes={recipes} />
           </article>
         </section>
       </main>
