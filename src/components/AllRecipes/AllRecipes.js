@@ -26,13 +26,9 @@ export default function AllRecipes() {
     allContentfulRecipe: { nodes: recipes },
   } = useStaticQuery(query);
 
-  const tags = recipes?.map((recipe) => {
-    return recipe.content.tags;
-  });
-
   return (
     <section className="max-w-[1120px] mx-auto grid sm:grid-cols-[200px_1fr] gap-4">
-      <TagList tags={tags} />
+      <TagList recipes={recipes} />
       <RecipesList recipes={recipes} />
     </section>
   );
