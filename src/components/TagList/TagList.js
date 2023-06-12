@@ -1,25 +1,26 @@
 import React from 'react';
 import setupTags from 'utils/setupTags';
+import { Link } from 'gatsby';
 
 export default function TagList({ recipes }) {
   const newTags = setupTags(recipes);
-  console.log(newTags);
-  console.log(newTags?.pancakes);
+
   return (
-    <section>
-      <h5>Recipes</h5>
-      {Object.keys(newTags)
-        .sort((a, b) => {
-          const [firstTag] = a;
-          const [secondTag] = b;
-          return firstTag.localeCompare(secondTag);
-        })
-        .map((tagName) => (
-          <p>
-            {tagName.charAt(0).toUpperCase()}
-            {tagName.slice(1)} ({newTags[tagName]})
-          </p>
-        ))}
+    <section className="order-1 flex flex-col sm:order-none ">
+      <h4>Recipes</h4>
+
+      <div className="grid grid-cols-3 sm:grid-cols-1">
+        {newTags.map((tag) => {
+          return (
+            <Link
+              to={`/${tag[0]}`}
+              className="block capitalize text-gray-500 hover:text-blue-600"
+            >
+              {tag[0]} ({tag[1]})
+            </Link>
+          );
+        })}
+      </div>
     </section>
   );
 }
