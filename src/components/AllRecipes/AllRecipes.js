@@ -27,7 +27,7 @@ export default function AllRecipes() {
   } = useStaticQuery(query);
 
   return (
-    <section className="max-w-[1120px] mx-auto grid sm:grid-cols-[200px_1fr] gap-4">
+    <section className="max-w-[1120px] mx-auto grid sm:grid-cols-[200px_1fr] gap-4 py-4 px-9 lg:py-0 lg:px-0">
       <TagList recipes={recipes} />
       <RecipesList recipes={recipes} />
     </section>
