@@ -11,7 +11,13 @@ const setupTags = (recipes) => {
     });
   });
 
-  return allTags;
+  const newTags = Object.entries(allTags).sort((a, b) => {
+    const [firstTag] = a;
+    const [secondTag] = b;
+    return firstTag.localeCompare(secondTag);
+  });
+
+  return newTags;
 };
 
 export default setupTags;
