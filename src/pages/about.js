@@ -1,7 +1,7 @@
 import React from 'react';
 import { Layout, RecipesList } from 'components';
 import { StaticImage } from 'gatsby-plugin-image';
-import { Link, graphql, useStaticQuery } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 
 export const query = graphql`
   {
@@ -22,17 +22,17 @@ export const query = graphql`
   }
 `;
 
-export default function About() {
-  const {
+export default function About({
+  data: {
     allContentfulRecipe: { nodes: recipes },
-  } = useStaticQuery(query);
-
+  },
+}) {
   console.log(recipes);
   return (
     <Layout>
       <main className="max-w-5xl mx-auto">
         <section className="grid grid-cols-1 lg:grid-cols-2 p-4 md:space-x-6 space-y-6 lg:space-y-0">
-          <article className="px-4">
+          <article className="px-4 pb-16">
             <h1>I'm a baby coloring book poke taxidermy</h1>
 
             <p>
