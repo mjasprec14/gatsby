@@ -5,7 +5,7 @@ import { Layout, AllRecipes } from 'components';
 export default function Home() {
   return (
     <Layout>
-      <main className="mx-auto min-h-[90vh] w-[90vw] max-w-[1120px] ">
+      <main className="mx-auto w-[90vw] max-w-[1120px] ">
         <header className="relative h-[40vh] mb-8">
           <StaticImage
             src="../assets/images/main.jpeg"
