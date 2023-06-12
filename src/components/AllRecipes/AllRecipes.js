@@ -31,7 +31,7 @@ export default function AllRecipes() {
   });
 
   return (
-    <section className="grid gap-y-8 gap-x-4">
+    <section className="max-w-[1120px] mx-auto grid sm:grid-cols-[200px_1fr] gap-4">
       <TagList tags={tags} />
       <RecipesList recipes={recipes} />
     </section>
